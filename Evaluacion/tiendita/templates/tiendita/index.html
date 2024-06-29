@@ -41,9 +41,11 @@
     <a href="{% url 'registrarse' %}">
       <button id="botonRegistro" type="button" class="btn btn-outline-light">Regístrese</button>
   </a>
+  {% if user.is_authenticated and user.is_superuser %}
   <a href="{% url 'administracion' %}">
     <button id="botonRegistro" type="button" class="btn btn-outline-light">Administración</button>
 </a>
+{% endif %}
 <a href="{% url 'login' %}">
   <button id="botonRegistro" type="button" class="btn btn-outline-light">Iniciar sesión</button>
 </a>
