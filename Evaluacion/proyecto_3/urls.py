@@ -21,6 +21,7 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('tiendita/',include('tiendita.urls')),
+    path('accounts/', include('django.contrib.auth.urls')),  # Incluir las URLs de autenticación de Django
 ]
 
 if settings.DEBUG:
