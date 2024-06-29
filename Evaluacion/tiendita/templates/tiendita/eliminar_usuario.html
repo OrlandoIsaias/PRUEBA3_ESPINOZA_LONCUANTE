@@ -1,0 +1,20 @@
+<!-- tiendita/templates/tiendita/eliminar_usuario.html -->
+
+{% extends 'tiendita/base.html' %}
+{% load static %}
+
+{% block title %}Eliminar Usuario{% endblock %}
+
+{% block content %}
+    <h1 class="text-center">Eliminar Usuario</h1>
+    <div class="card">
+        <div class="card-body">
+            <p>¿Estás seguro de que deseas eliminar al usuario "{{ usuario.email }}"?</p>
+            <form method="post">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-danger">Confirmar Eliminación</button>
+                <a href="{% url 'administracion' %}" class="btn btn-secondary">Cancelar</a>
+            </form>
+        </div>
+    </div>
+{% endblock %}

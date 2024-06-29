@@ -7,5 +7,8 @@ urlpatterns = [
     path('flores/', views.flores, name='flores'),
     path('maceteros/', views.maceteros, name='maceteros'),
     path('tierradehojas/', views.tierradehojas, name='tierradehojas'),
-    
+    path('registrarse/', views.registro, name='registrarse'),
+    path('administracion/', views.administracion, name='administracion'),  # Nueva URL para administraci
+    path('editar_usuario/<int:usuario_id>/', views.editar_usuario, name='editar_usuario'),
+    path('eliminar_usuario/<int:usuario_id>/', views.eliminar_usuario, name='eliminar_usuario'),
 ]

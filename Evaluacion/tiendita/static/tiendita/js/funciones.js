@@ -214,4 +214,53 @@ function isDarkModeEnabled() {
 
   return false;
 }
+// JavaScript function to close the form
+document.getElementById("closeFormButton").onclick = function() {
+  document.getElementById("overlay").style.display = "none";
+};
 
+function cancelar() {
+  document.getElementById("overlay").style.display = "none";
+}
+
+// To open the form overlay, you can use the following function
+function abrirFormulario() {
+  document.getElementById("overlay").style.display = "flex";
+}
+
+function validarFormulario() {
+  var email = document.getElementById('email').value.trim();
+  var nombre = document.getElementById('nombre').value.trim();
+  var apellido = document.getElementById('apellido').value.trim();
+  var telefono = document.getElementById('telefono').value.trim();
+  var contrasena = document.getElementById('contrasena').value.trim();
+  var contrasena2 = document.getElementById('contrasena2').value.trim();
+
+  // Validación básica
+  if (email === '' || nombre === '' || apellido === '' || telefono === '' || contrasena === '' || contrasena2 === '') {
+      mostrarError('Todos los campos son obligatorios.');
+      return;
+  }
+
+  // Validar que las contraseñas coincidan
+  if (contrasena !== contrasena2) {
+      mostrarError('Las contraseñas no coinciden.');
+      return;
+  }
+
+  // Si todo está correcto, enviar el formulario
+  document.getElementById('form').submit();
+}
+
+function mostrarError(mensaje) {
+  var errorDiv = document.getElementById('error-messages');
+  errorDiv.innerHTML = '<div class="alert alert-danger" role="alert">' + mensaje + '</div>';
+}
+
+function cancelar() {
+  document.getElementById("overlay").style.display = "none";
+}
+
+function cancelar() {
+  window.location.href = '/tiendita/index/';  // Reemplaza '/index/' con la URL correcta de tu página de inicio
+}
