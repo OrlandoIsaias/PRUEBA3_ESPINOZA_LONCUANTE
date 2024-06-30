@@ -18,10 +18,15 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
+from django.views.generic import RedirectView
+from tiendita import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('tiendita/',include('tiendita.urls')),
     path('accounts/', include('django.contrib.auth.urls')),  # Incluir las URLs de autenticación de Django
+    path('', RedirectView.as_view(url='tiendita/', permanent=True)),
+    path('', views.index, name='index'),  # Redirige la URL raíz a la vista del índice directamente
+
 ]
 
 if settings.DEBUG:

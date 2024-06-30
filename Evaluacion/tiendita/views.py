@@ -87,3 +87,6 @@ def eliminar_usuario(request, usuario_id):
         return redirect('administracion')  # Redirige de vuelta a la página de administración
     
     return render(request, 'tiendita/eliminar_usuario.html', {'usuario': usuario})
+
+def index(request):
+    return render(request, 'tiendita/index.html')
